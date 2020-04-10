@@ -1,15 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import logo from './logo.svg';
 import { Button, Dropdown, DropdownButton } from 'react-bootstrap';
 
-import Counter from './components/Counter'
-import Counter2 from './components/Counter2'
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import Counter from './components/Counter';
+import Counter2 from './components/Counter2';
 
 import './App.css';
 
-function App() {
+function App({ showsidebar }) {
   return (
     <div className="App">
+      <Header />
+      {showsidebar && <Sidebar />}
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -36,4 +41,10 @@ function App() {
   );
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    showsidebar: state.showsidebar.showsidebar
+  }
+}
+
+export default connect(mapStateToProps)(App);
