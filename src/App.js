@@ -2,7 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import { Button, Dropdown, DropdownButton } from 'react-bootstrap';
 
-import Counter from './Counter'
+import Counter from './components/Counter'
+import Counter2 from './components/Counter2'
 
 import './App.css';
 
@@ -23,6 +24,7 @@ function App() {
           Learn React
         </a>
         <Counter />
+        <Counter2 />
         <Button variant="primary">Primary</Button>{' '}
         <DropdownButton id="dropdown-basic-button" title="Dropdown button">
           <Dropdown.Item href="#/action-1">Action</Dropdown.Item>

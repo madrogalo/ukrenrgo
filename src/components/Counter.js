@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+import { countIncrement, countDecrement } from '../actions/count.actions'
 const StyledCounter = styled.div`
     width: 345px;
     color: blue;    
@@ -16,13 +17,9 @@ const Lorem = styled.p`
     color: red;
 `
 class Counter extends React.Component {
-//   state = { count: 0 }
 
-//   increment = () => this.setState({ count: this.state.count + 1 })
-//   decrement = () => this.setState({ count: this.state.count - 1 })
+render() {
 
-  render() {
-     
     return (
       <StyledCounter>
         <Paragraph>{this.props.count}</Paragraph>
@@ -38,13 +35,13 @@ class Counter extends React.Component {
 
 function mapStateToProps(state) {
    return {
-       count: state.count
+       count: state.count.count
    } 
 }
 function mapDispatchToProps(dispatch) {
    return {
-    increment: number => dispatch({type: "INCREMENT", payload: number}),
-    decrement: number => dispatch({type: "DECREMENT", payload: number})
+    increment: number => dispatch(countIncrement(number)),
+    decrement: number => dispatch(countDecrement(number))
    } 
 }
 
