@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import InputNode from './InputNode';
 
 const StyledSideBar = styled.div`
   position: absolute;
@@ -15,6 +16,7 @@ function Sidebar() {
   return (
     <StyledSideBar variant={'primary'}>
       Sidebar
+      <InputNode />
     </StyledSideBar>
   )
 }

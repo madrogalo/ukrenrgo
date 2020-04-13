@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import logo from './logo.svg';
+
 import { Button, Dropdown, DropdownButton } from 'react-bootstrap';
 
 import Header from './components/Header';
@@ -16,7 +16,7 @@ function App({ showsidebar }) {
       <Header />
       {showsidebar && <Sidebar />}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      
         <p>
           Hello world <code>src/App.js</code> and save to reload.
         </p>

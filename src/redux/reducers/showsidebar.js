@@ -1,7 +1,7 @@
 import { SHOWSIDEBAR } from '../../actions/actionTypes';
 
 const initialstate = {
-  showsidebar: false
+  showsidebar: true
 }
 
 export default function showsidebar(state = initialstate, action) {

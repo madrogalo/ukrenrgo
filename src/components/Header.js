@@ -3,9 +3,7 @@ import { connect } from 'react-redux'
 import { Button, Navbar, Nav } from 'react-bootstrap';
 import { showSidebar } from './../actions/showsidebar.actions'
 
-function Header({showsidebar, handleSideBar}) {
-  console.log(showsidebar)
-  
+function Header({showsidebar, handleSideBar}) {  
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand href="#home">UA ENERGY</Navbar.Brand>
