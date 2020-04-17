@@ -7,16 +7,26 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Counter from './components/Counter';
 import Counter2 from './components/Counter2';
-
+import NodeItem from './components/NodeItem';
 import './App.css';
 
 function App({ showsidebar }) {
+
+  let cordXY = {
+    x: 123,
+    y: 150
+  }
   return (
-    <div className="App">
+    <div className="App" onMouseMove={function(e) {
+      // console.log('x', e.clientX)
+      // console.log('y', e.clientY)
+    
+    }
+    }>
       <Header />
       {showsidebar && <Sidebar />}
       <header className="App-header">
-      
+      <NodeItem cordXY={cordXY}/>
         <p>
           Hello world <code>src/App.js</code> and save to reload.
         </p>

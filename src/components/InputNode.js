@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import { Button, Form } from 'react-bootstrap';
 import styled from 'styled-components';
 
+import { setNodeName } from '../actions/nodeList.actions';
 const SpaceForm = styled.div`
   margin: 25px
 `
 
-function InputNode({nodeListName}) {
+function InputNode({nodeListName, setNode}) {
 
   const [input, setInput] = useState('')
 
@@ -39,7 +40,10 @@ function InputNode({nodeListName}) {
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
         </Form>
-        <Button variant="primary">
+        <Button 
+        onClick={ () => setNode(input)
+        }
+        variant="primary">
           Submit
         </Button>
     </SpaceForm>
@@ -49,8 +53,14 @@ function InputNode({nodeListName}) {
 
 function mapStateToProps(state) {
   return {
-    nodeListName: state.nodeNameList.nodeListName
+    nodeListName: state.nodeNameList
   }
 }
 
-export default connect(mapStateToProps)(InputNode)
+function mapDispatchToProps(dispatch) {
+  return {
+    setNode: number => dispatch(setNodeName(number))
+  } 
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(InputNode)
